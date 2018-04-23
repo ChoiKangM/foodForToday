@@ -24,7 +24,9 @@ $ rails g controller home
 사용할 수 있습니다.
 
 `g`는 `generate`의 약자입니다.
+
 > 레일즈야 만들자 컨트롤러 이름은 home  
+
 
 생성한 콘트롤러는 아래의 명령어로 삭제할 수 있습니다.
 
@@ -36,7 +38,9 @@ $ rails delete controller home
 $ rails d controller home
 ```
 `d`는 `delete`의 약자입니다.
+
 > 레일즈야 지우자 컨트롤러 이름은 home
+
 
 ```bash
 $ rails g controller home index
@@ -103,7 +107,7 @@ Rails.application.routes.draw do
 end
 ```
 
-## 서버 키자
+## 서버 실행하기
 ```bash
 $ rails s
 ```
