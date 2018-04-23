@@ -2,27 +2,40 @@
 
 >  레일즈 MVC 패턴 중 View와 Controller만 사용해 만들어보자
 
-## 레일즈 프로젝트 만들자
-레일즈 프로젝트 만들자
+## 레일즈 프로젝트 생성하기
+레일즈 프로젝트를 만듭니다.
 ```bash
 $ rail new foodForToday
 ```
-프로젝트 폴더로 들어가자
+생성된 Rails 프로젝트 폴더로 이동합니다.
 ```bash
 $ cd foodForToday
 ```
 
-## controller를 만들어보자
+## controller 생성하기
 $ 표시가 있으면 cmd 혹은 bash에 입력하는 명령어입니다. 
+```bash
+$ rails genetate controller home
+```
+혹은
 ```bash
 $ rails g controller home
 ```
-`g`는 `generate`의 약자입니다.  
+사용할 수 있습니다.
+
+`g`는 `generate`의 약자입니다.
 > 레일즈야 만들자 컨트롤러 이름은 home  
+
+생성한 콘트롤러는 아래의 명령어로 삭제할 수 있습니다.
+
+```bash
+$ rails delete controller home
+```
 
 ```bash
 $ rails d controller home
 ```
+`d`는 `delete`의 약자입니다.
 > 레일즈야 지우자 컨트롤러 이름은 home
 
 ```bash
@@ -41,23 +54,20 @@ Controller 안에는 사용자가 보내는 요청을 처리하는 여러 액션
 ## controller 내부 로직을 만들자
 
 먹고 싶은 메뉴의 사진을 크롬에서 검색해 저장합니다.
-파일의 이름은 다르되 확장자는 동일하게 해둡시다.
+파일의 이름은 다르되 확장자는 동일하게 저장합니다.
 (ex - 라면.jpeg, 족발.jpeg, 짜장면.jpeg, 짬뽕.jpeg)
-`public` 폴더 안에 사진 파일을 넣습니다.  
-아래 형태의 폴더 트리로 만듭시다.
+`assets` 폴더 안에 사진 파일을 넣습니다.  
+아래 형태의 폴더 트리로 만듭니다.
 ```
-public
- ├── 404.html
- ├── 422.html
- ├── 500.html
- ├── apple-touch-icon-precomposed.png
- ├── apple-touch-icon.png
- ├── favicon.ico
- ├── robots.txt
- ├── 라면.jpeg
- ├── 족발.jpeg
- ├── 짜장면.jpeg
- └── 짬뽕.jpeg
+assets
+  ├── config
+  ├── javascript
+  ├── stylesheets
+  ├── images
+        ├── 라면.jpeg
+        ├── 족발.jpeg
+        ├── 짜장면.jpeg
+        └── 짬뽕.jpeg
 ```
 
 ## `home_controller.rb`
@@ -73,7 +83,7 @@ end
 ```
 #### `foods`와 `@food`의 차이
 `foods`는 `home_controller.rb` controller 내부에서만 사용 가능하고  
-`@food`는 `home_controller.rb`와 `index.html.erb` view 파일에서 사용 가능합니다
+`@food`는 `home_controller.rb`와 `index.html.erb` view 파일에서 사용 가능합니다.
 
 #### `sample`
 배열의 메소드 중 하나로 랜덤하게 요소 1개를 선택합니다.
@@ -81,8 +91,8 @@ end
 ## `index.html.erb`
 ```erb
 <h1>오늘 뭐 먹지?</h1>
-<img src="/<%= @food%>.jpeg" alt="">
-<p>오늘 먹을 건 <%= @food%>입니다</p>
+<img src="/assets/<%= @food%>" alt="">
+<p>오늘 먹을 건 <%= @food %>입니다.</p>
 ```
 
 ## `routes.rb`
@@ -99,11 +109,11 @@ $ rails s
 ```
 
 크롬 브라우저로 http://localhost:3000 에 접속한다.  
-새로고침해 메뉴가 바뀌는지 확인하자
+새로고침해 메뉴가 바뀌는지 확인합니다.
 
 ## Bootstrap
 
-Bootstrap CDN 붙이고 마음껏 쓰자
+Bootstrap CDN 붙이고 마음껏 씁니다.
  
 `/app/views/layouts/application.html.erb`
 ```erb
@@ -128,7 +138,3 @@ Bootstrap CDN 붙이고 마음껏 쓰자
 </html>
 
 ```
-
-
-
-
