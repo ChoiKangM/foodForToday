@@ -1,6 +1,6 @@
 # 오늘 뭐 먹지?
 
->  레일즈 MVC 패턴 중 View와 Controller만 사용해 만들어보자
+>  레일즈 MVC 패턴 중 View와 Controller만 사용해 만들어봅니다.
 
 ## 레일즈 프로젝트 생성하기
 레일즈 프로젝트를 만듭니다.
@@ -102,6 +102,8 @@ end
 ## `routes.rb`
 ```ruby
 Rails.application.routes.draw do
+  # 웹페이지로 들어오는 순간 home controller의 index 액션으로 이동합니다
+  # 메인 페이지는 home controller의 index 액션이다 하기도 합니다.
   root 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
@@ -112,7 +114,7 @@ end
 $ rails s
 ```
 
-크롬 브라우저로 http://localhost:3000 에 접속한다.  
+크롬 브라우저로 http://localhost:3000 에 접속합니다.  
 새로고침해 메뉴가 바뀌는지 확인합니다.
 
 ## Bootstrap
